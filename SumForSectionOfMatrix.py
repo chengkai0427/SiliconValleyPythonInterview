@@ -9,7 +9,7 @@ class SumForSectionOfMatrix:
                 self.matrix[i+1][j+1]=self.matrix[i][j+1]+self.matrix[i+1][j]+matrix[i][j]-self.matrix[i][j]
     def sumRegion(self,row1: int, col1: int, row2: int, col2: int) -> int:
         return self.matrix[row2+1][col2+1]-self.matrix[row2+1][col1]-self.matrix[row1][col2+1]+self.matrix[row1][col1]
-A=[[1]*3]*3
+A=[[1]*3]*3#矩阵A的所有行实际上是同一个列表，但此处作为参数不影响结果，因为创建对象时已经用列表推导式产生了新的矩阵
 s=SumForSectionOfMatrix(A)
 print(s.matrix)
 print(s.sumRegion(0,0,2,2))
