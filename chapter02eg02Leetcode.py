@@ -48,7 +48,7 @@ if re.match(r'^\d(->\d)*$', numlist1):
         list1.add(int(v))
 else:
     raise ValueError('输入格式错误')
-numlist2=input('请输入第一个数字的链条，用->连接，如：7->2->4->3：')
+numlist2=input('请输入第二个数字的链条，用->连接，如：7->2->4->3：')
 list2=NodeList()
 if re.match(r'^\d(->\d)*$', numlist2):
     for v in re.findall(r'\d', numlist2):
