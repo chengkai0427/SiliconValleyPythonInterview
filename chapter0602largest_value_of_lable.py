@@ -21,4 +21,4 @@ value = [1,2,3,4,5,6,7,8,9,10]
 label = ['a','a','b','b','c','c','d','e','e','e']
 num_wanted = 4
 use_limit = 2
-print(largest_value_of_label(value, label, num_wanted, use_limit)) #output: 27
+print(largest_value_of_label(value, label, num_wanted, use_limit)) #output: 32
