@@ -58,31 +58,32 @@ class LinkedList:#单链表定义
         return False
 
 #测试
-import random
-#创建空单链表
-llist = LinkedList()
-#添加10个节点
-for i in range(10):
-    llist.append(i)
-#随机选择一个节点作为循环节点
-cycle_node = llist.head
-for i in range(random.randint(1, 10)):
-    cycle_node = cycle_node.next
-#找到尾节点
-tail = llist.head
-while tail.next:
-    tail = tail.next
-#将尾节点的next指针指向循环节点
-tail.next = cycle_node
-#检测链表是否循环，无循环则直接调用display()，有循环则重新定义打印方式并将循环节点用括号括起来
-if llist.cycle_detection():
-    head = llist.head
-    cycle=0
-    while cycle<2:
-        print(head.value, end=" -> ")
-        head = head.next
-        if head == cycle_node:
-            cycle+=1
-    print(f"({head.value})")
-else:
-    llist.display()
+if __name__ == '__main__':
+    import random
+    #创建空单链表
+    llist = LinkedList()
+    #添加10个节点
+    for i in range(10):
+        llist.append(i)
+    #随机选择一个节点作为循环节点
+    cycle_node = llist.head
+    for i in range(random.randint(1, 10)):
+        cycle_node = cycle_node.next
+    #找到尾节点
+    tail = llist.head
+    while tail.next:
+        tail = tail.next
+    #将尾节点的next指针指向循环节点
+    tail.next = cycle_node
+    #检测链表是否循环，无循环则直接调用display()，有循环则重新定义打印方式并将循环节点用括号括起来
+    if llist.cycle_detection():
+        head = llist.head
+        cycle=0
+        while cycle<2:
+            print(head.value, end=" -> ")
+            head = head.next
+            if head == cycle_node:
+                cycle+=1
+        print(f"({head.value})")
+    else:
+        llist.display()
